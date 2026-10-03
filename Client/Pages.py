@@ -171,7 +171,7 @@ class Menu:
                             pp = self.screenItems[4].getResult()
                             fname,ext = os.path.splitext(pp)
                             if(pp != "Images\\sampleUser.png"):
-                                npp = "chrctrImages/"+name+"PFP"+ext
+                                npp = "sessionFiles\\chrctrImages/"+name+"PFP"+ext
                                 try:
                                     shutil.copy(pp,npp)
                                 except Exception as e:

@@ -5,14 +5,12 @@ from random import randint
 from Utilities import FieldTool,Dialog
 from Utilities import Green,Red,White,Black,LightGray,Gray,Yellow
 
-
 def getCollision(x,y,xs,ys,xc,yc,click=False):
     if(click):
         xc,yc = pg.mouse.get_pos()
     if xc > x and xc < x+xs and yc > y and yc < y+ys:
         return True
     return False
-
 
 #class Enemy
 class Enemy:
@@ -109,7 +107,7 @@ class TextDialog:
     def playVoiceLine(self):
         try:
             Sound = pg.mixer.Sound(self.VL)
-            Sound.set_volume(0.3)
+            Sound.set_volume(0.5)
             Sound.play()
         except Exception as e:
             self.Slist.append(Dialog(self.W,(490,295),(300,50),"Sound not found",

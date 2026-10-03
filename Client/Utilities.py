@@ -107,12 +107,14 @@ class Dialog(FieldTool):
         self.pos = (self.pos[0],self.pos[1]-self.speed)
         self.textPos = (self.textPos[0],self.textPos[1]-self.speed)
         if self.count >= self.time:
-            self.Slist.remove(self)
+            if(self in self.Slist):
+                self.Slist.remove(self)
 
     def isClicked(self,x,y):
-        flag = getCollision(self.pos[0],self.pos[1],self.size[0],self.size[1],x,y)
-        if flag:
-            self.Slist.remove(self)
+        # flag = getCollision(self.pos[0],self.pos[1],self.size[0],self.size[1],x,y)
+        # if flag:
+            # if(self in self.Slist):
+        #     self.Slist.remove(self)
         return -1
 
 #class image
@@ -365,7 +367,8 @@ class Dice(FieldTool):
                                   self.pos[1]+self.size[1]//2-25))
 
         if self.count >= self.numberCount:
-            self.Slist.remove(self)
+            if(self in self.Slist):
+                self.Slist.remove(self)
 
     def getResult(self):
         return self.path
