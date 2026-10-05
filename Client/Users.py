@@ -4,12 +4,15 @@
 #############
 
 class Adventurer:
-    def __init__(self,name,race,role,hp=0,mana=0,charisma=0,atq=0,money=0,profPic="None"):
+    def __init__(self,name,race,role,hp=0,mana=0,charisma=0,atq=0,money=0,profPic="None",Thp=None):
         self.name = name
         self.race = race
         self.role = role
         self.HP = int(hp)
-        self.totalHP = int(hp)
+        if(Thp == None):
+            self.totalHP = int(hp)
+        else:
+            self.totalHP = int(Thp)
         self.Mana = int(mana)
         self.Charisma = int(charisma)
         self.ATQ = int(atq)
@@ -42,7 +45,7 @@ class Adventurer:
     def getProfPic(self):
         return self.profPic
     def getSelf(self):
-        s = self.name+"="+self.race+"="+self.role+"="+str(self.HP)+"="+str(self.Mana)+"="+str(self.Charisma)+"="+str(self.ATQ)+"="+str(self.Money)+"="+self.profPic
+        s = self.name+"="+self.race+"="+self.role+"="+str(self.HP)+"="+str(self.Mana)+"="+str(self.Charisma)+"="+str(self.ATQ)+"="+str(self.Money)+"="+self.profPic+"="+str(self.totalHP)
         return s
 
     #############
@@ -74,4 +77,4 @@ class Adventurer:
 
 class DM(Adventurer):
     def __init__(self,name,race,role,profPic="None"):
-        super().__init__(name,race,role,9999,9999,9999,9999,9999,profPic)
+        super().__init__(name,race,role,9999,9999,9999,9999,9999,profPic,9999)

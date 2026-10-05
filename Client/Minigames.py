@@ -107,7 +107,7 @@ class TextDialog:
     def playVoiceLine(self):
         try:
             Sound = pg.mixer.Sound(self.VL)
-            Sound.set_volume(0.5)
+            Sound.set_volume(0.7)
             Sound.play()
         except Exception as e:
             self.Slist.append(Dialog(self.W,(490,295),(300,50),"Sound not found",
@@ -125,6 +125,3 @@ class TextDialog:
                 line = ""+ch
         lines.append(line)
         return lines
-        # self.ptd = TextDialog(self.W,(10,520),(1260,190),self.font,"Daze","Texto muy muy muy largo que quiero desplegar a ver que muestra este text dialog y ver si sirve el wrrap Texto muy muy muy largo que quiero desplegar a ver que muestra este text dialog y ver si sirve el wrrap","Images\\GV1.mp3",self.screenItems);
-        # self.ptd.playVoiceLine()
-        # self.ptd.render()
